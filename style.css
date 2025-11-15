@@ -173,7 +173,15 @@ body {
   gap: 0.75rem;
   margin-top: 1rem;
   max-width: 400px;
-  margin: auto;
+  margin: 1rem auto;
+}
+
+.join-form-container {
+  background-color:#e5e7eb;
+  border-color:darkslateblue;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
 }
 
 .join-p {
@@ -201,7 +209,7 @@ body {
 .secondary-btn {
   width: 100%;
   margin-top: 0.5rem;
-  background-color: #10b981;
+  background-color:#222;
   color: #ffffff;
 }
 /* ==============
