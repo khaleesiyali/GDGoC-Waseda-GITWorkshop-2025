@@ -199,3 +199,24 @@ body {
   padding: 1rem;
   color: #6b7280;
 }
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  background: #333;
+  color: white;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
