@@ -189,6 +189,13 @@ body {
   border: 1px solid #d1d5db;
   font-size: 0.9rem;
 }
+.join-form textarea {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  resize: vertical; 
+}
 
 /* ==============
    FOOTER
