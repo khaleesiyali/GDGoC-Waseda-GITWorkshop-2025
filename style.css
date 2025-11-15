@@ -142,6 +142,88 @@ body {
   margin-bottom: 0.4rem;
 }
 
+/* Tech Slider Styles */
+    .tech-slider {
+      overflow: hidden;
+      width: 100%;
+      background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa);
+      padding: 2rem 0;
+      border-radius: 8px;
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .tech-slider::before,
+    .tech-slider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .tech-slider::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(248,249,250,1), rgba(248,249,250,0));
+    }
+
+    .tech-slider::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(248,249,250,1), rgba(248,249,250,0));
+    }
+
+    .tech-track {
+      display: flex;
+      gap: 3rem;
+      animation: slide 25s linear infinite;
+      width: fit-content;
+    }
+
+    .tech-track:hover {
+      animation-play-state: paused;
+    }
+
+    .tech-icon {
+      height: 40px;
+      width: 40px;
+      font-size: 4rem;
+      color: #333;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .tech-icon:hover {
+      transform: scale(1.2);
+    }
+
+    /* Specific icon colors on hover */
+    .devicon-html5-plain:hover { color: #E34F26; }
+    .devicon-css3-plain:hover { color: #1572B6; }
+    .devicon-javascript-plain:hover { color: #F7DF1E; }
+    .devicon-typescript-plain:hover { color: #3178C6; }
+    .devicon-python-plain:hover { color: #3776AB; }
+    .devicon-java-plain:hover { color: #007396; }
+    .devicon-c-plain:hover { color: #A8B9CC; }
+    .devicon-git-plain:hover { color: #F05032; }
+    .devicon-github-original:hover { color: #181717; }
+    .devicon-figma-plain:hover { color: #F24E1E; }
+    .devicon-kotlin-plain:hover { color: #7F52FF; }
+    .devicon-react-original:hover { color: #61DAFB; }
+    .devicon-nextjs-original:hover { color: #000000; }
+    .devicon-pytorch-original:hover { color: #EE4C2C; }
+    .devicon-flutter-plain:hover { color: #02569B; }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
 /* ==============
    PROJECTS SECTION
    ============== */
