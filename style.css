@@ -66,8 +66,7 @@ body {
    ============== */
 
 .hero-section {
-  background: linear-gradient(135deg, #111827, #1f2937);
-  color: #f9fafb;
+  background: #111827;
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -81,12 +80,14 @@ body {
 .hero-section h1 {
   font-size: clamp(2.2rem, 4vw, 3rem);
   margin-bottom: 1rem;
+  color: #f5f5f5;
 }
 
 .hero-tagline {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  opacity: 0.9;
+  opacity: 0.8;
+  color: #f9fafb
 }
 
 /* Buttons */
@@ -101,12 +102,13 @@ body {
 }
 
 .primary-btn {
-  background-color: #f97316;
-  color: #111827;
+  background: linear-gradient(120deg, #f97316, #7a380d);
+  background-color: #c15c14;
+  color: #f9fafb;
 }
 
 .primary-btn:hover {
-  opacity: 0.9;
+  background: linear-gradient(120deg, #7a380d, #f97316);
 }
 
 .secondary-btn {
