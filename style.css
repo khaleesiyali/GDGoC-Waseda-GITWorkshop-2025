@@ -27,7 +27,7 @@ body {
    ============== */
 
 .site-header {
-  background-color: #111827;
+  background-color: #717171;
   color: #f9fafb;
 }
 
@@ -66,7 +66,8 @@ body {
    ============== */
 
 .hero-section {
-  background: linear-gradient(135deg, #111827, #1f2937);
+  background: linear-gradient(135deg, #4285F4,#FBBC05,#34A853,#EA4335
+  );
   color: #f9fafb;
   text-align: center;
   padding-top: 4rem;
@@ -101,8 +102,8 @@ body {
 }
 
 .primary-btn {
-  background-color: #f97316;
-  color: #111827;
+  background-color: #717171;
+  color: #ffffff;
 }
 
 .primary-btn:hover {
@@ -110,7 +111,7 @@ body {
 }
 
 .secondary-btn {
-  background-color: #111827;
+  background-color: #717171;
   color: #f9fafb;
 }
 
