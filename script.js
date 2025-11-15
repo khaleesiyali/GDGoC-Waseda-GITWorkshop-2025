@@ -15,55 +15,38 @@
 document.addEventListener("DOMContentLoaded", () => {
   const heroCta = document.getElementById("hero-cta");
   const aboutSection = document.getElementById("about");
-
+  
   if (heroCta && aboutSection) {
     heroCta.addEventListener("click", () => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     });
   }
 
-  // Theme toggle logic
-  const THEME_KEY = "theme"; // "light" | "dark" or null = follow system
-  const toggle = document.getElementById("theme-toggle");
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    target.scrollIntoView({ behavior: "smooth" });
+  });
+});
 
-  function applyTheme(theme) {
-    if (theme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      if (toggle) { toggle.textContent = "☀️"; toggle.setAttribute("aria-pressed", "true"); }
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      if (toggle) { toggle.textContent = "🌙"; toggle.setAttribute("aria-pressed", "false"); }
-    }
-  }
+const backToTopBtn = document.getElementById("backToTop");
 
-  // Load saved or system preference
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved === "dark" || saved === "light") {
-    applyTheme(saved);
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    backToTopBtn.classList.add("show");
   } else {
-    applyTheme(prefersDark && prefersDark.matches ? "dark" : "light");
+    backToTopBtn.classList.remove("show");
   }
+});
 
-  // If no explicit saved value, respond to system changes
-  if (prefersDark) {
-    prefersDark.addEventListener("change", (e) => {
-      if (!localStorage.getItem(THEME_KEY)) {
-        applyTheme(e.matches ? "dark" : "light");
-      }
-    });
-  }
-
-  // Toggle click handler
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      const next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      localStorage.setItem(THEME_KEY, next);
-    });
-  }
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 
   // TODO (Optional): Add your own interaction below
-  // e.g. form validation, etc.
+  // e.g. dark mode toggle, form validation, etc.
 });
