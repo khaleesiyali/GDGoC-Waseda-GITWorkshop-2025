@@ -185,6 +185,9 @@ body {
   gap: 0.25rem;
   font-size: 0.9rem;
 }
+.join-form .first-label {
+  margin-top: 1rem;
+}
 
 .join-form input,
 .join-form select {
