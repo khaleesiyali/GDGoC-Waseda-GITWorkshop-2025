@@ -22,6 +22,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Theme toggle logic
+  const THEME_KEY = "theme"; // "light" | "dark" or null = follow system
+  const toggle = document.getElementById("theme-toggle");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      if (toggle) { toggle.textContent = "☀️"; toggle.setAttribute("aria-pressed", "true"); }
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      if (toggle) { toggle.textContent = "🌙"; toggle.setAttribute("aria-pressed", "false"); }
+    }
+  }
+
+  // Load saved or system preference
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark" || saved === "light") {
+    applyTheme(saved);
+  } else {
+    applyTheme(prefersDark && prefersDark.matches ? "dark" : "light");
+  }
+
+  // If no explicit saved value, respond to system changes
+  if (prefersDark) {
+    prefersDark.addEventListener("change", (e) => {
+      if (!localStorage.getItem(THEME_KEY)) {
+        applyTheme(e.matches ? "dark" : "light");
+      }
+    });
+  }
+
+  // Toggle click handler
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      localStorage.setItem(THEME_KEY, next);
+    });
+  }
+
   // TODO (Optional): Add your own interaction below
-  // e.g. dark mode toggle, form validation, etc.
+  // e.g. form validation, etc.
 });
