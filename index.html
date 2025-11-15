@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <nav class="nav">
-      <div class="logo">Dev Circle</div>
+      <div class="logo">Onederland</div>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -36,9 +36,9 @@
            - Background color or simple illustration
       -->
       <div class="hero-content">
-        <h1>Welcome to Dev Circle</h1>
+        <h1>Welcome to Onederland</h1>
         <p class="hero-tagline">
-          A place where students build, learn, and ship projects together.
+          a community where creators collaborate, innovate, and launch real projects
         </p>
         <button class="btn primary-btn" id="hero-cta">
           Learn More
@@ -102,14 +102,16 @@
            - Simple “join us” message
            - Contact info or fake form
       -->
-      <h2>Join Our Team</h2>
+      <h2>Join Our Creative Team</h2>
       <p>
-        Interested in front-end, back-end, or design? We’d love to have you!
+        Whether you love coding, design, or just want to explore - this is the perfect place to grow your skills! 
+        <br>Got questions? Reach us at <a href="mailto:enquiries@onederland.com">enquiries@devcircle.com</a> 
+        - or fill up the form below if you can't wait to join us!
       </p>
       <form class="join-form">
         <label>
           Name
-          <input type="text" placeholder="Your name" />
+          <input type="text" placeholder="Enter your Name" />
         </label>
         <label>
           Email
@@ -118,18 +120,29 @@
         <label>
           What are you interested in?
           <select>
-            <option>Front-end</option>
-            <option>Back-end</option>
-            <option>Design</option>
-            <option>Not sure yet</option>
+            <option value="">Choose one</option>
+            <option>UI/UX Design</option>
+            <option>Front-end Development</option>
+            <option>Back-end Development</option>
+            <option>Project Management</option>
+            <option>Still Exploring</option>
           </select>
         </label>
+        <label> 
+          Any Comments or Questions?
+        <textarea placeholder="" rows="4"></textarea>
+        </label>
         <button type="submit" class="btn secondary-btn">
-          Send
+          Join Now
         </button>
       </form>
     </section>
   </main>
+
+   <!-- Back to top button
+    It will be always visible on the bottom right of the page
+      -->
+  <button id="backToTop">↑</button>
 
   <footer class="site-footer">
     <p>© 2025 Dev Circle. Built during the Git/GitHub Workshop.</p>
