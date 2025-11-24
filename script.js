@@ -15,13 +15,21 @@
 document.addEventListener("DOMContentLoaded", () => {
   const heroCta = document.getElementById("hero-cta");
   const aboutSection = document.getElementById("about");
+  var darkModeToggle = document.getElementById("theme-toggle");
+  var body = document.body;
+
 
   if (heroCta && aboutSection) {
     heroCta.addEventListener("click", () => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     });
   }
-
-  // TODO (Optional): Add your own interaction below
+  
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+    });
+  }
+  // TODO (Optional): Add your own in teraction below
   // e.g. dark mode toggle, form validation, etc.
 });
